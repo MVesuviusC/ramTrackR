@@ -1,0 +1,48 @@
+---
+title: "Using ramTrackR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using ramTrackR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Introduction
+`ramTrackR` provides a framework to monitor the RAM usage of an R process in the background. It spins up an independent background process to poll memory usage without blocking the active R session.
+
+## Usage Guide
+
+To use `ramTrackR`, simply call `start_monitoring()`. By default, this monitors the active R session. Note that `start_monitoring` returns an S4 class object of type `RamMonitor` which maintains the state.
+
+```{r eval=FALSE}
+library(ramTrackR)
+
+# Start monitoring the current R session
+monitor <- start_monitoring(interval = 0.5)
+
+# Simulate some work and record bookmarks
+x <- runif(1e7)
+bookmark_time(monitor, "Allocated x")
+
+y <- runif(2e7)
+bookmark_time(monitor, "Allocated y")
+
+rm(y)
+gc()
+bookmark_time(monitor, "Removed y")
+
+cat("Max RAM:", get_max_ram_usage(monitor), "GB\n")
+
+# Stop monitoring
+stop_monitoring(monitor)
+
+# Visualize the memory usage across marked events
+plot_ram_usage(monitor)
+```

@@ -1,0 +1,28 @@
+Package: ramTrackR
+Title: Monitor RAM Usage Over Time
+Version: 0.1.0
+Authors@R: 
+    person(
+        given = "Matthew",
+        family = "Cannon",
+        middle = "Vinson",
+        email = "matthewvc1@gmail.com",
+        role = c("aut", "cre")
+    )
+Description: Monitors RAM usage in the background, allowing users to bookmark timepoints and visualize memory usage over time.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports: 
+    ggplot2,
+    methods,
+    callr,
+    dplyr,
+    ps,
+    tibble
+Suggests: 
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

@@ -1,0 +1,10 @@
+^ramTrackR\.Rproj$
+^\.Rproj\.user$
+^demo_script\.R$
+^demo_output.*\.txt$
+^covr_output\.txt$
+^check_output\.txt$
+^coverage\.html$
+^\.gitignore$
+^\.Rbuildignore$
+^LICENSE\.md$
