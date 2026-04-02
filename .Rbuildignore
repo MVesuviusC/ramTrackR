@@ -8,3 +8,4 @@
 ^\.gitignore$
 ^\.Rbuildignore$
 ^LICENSE\.md$
+^\.github$
