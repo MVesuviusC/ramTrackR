@@ -12,7 +12,8 @@ stop_monitoring(monitor, cleanup = FALSE)
 \arguments{
 \item{monitor}{A RamMonitor object}
 
-\item{cleanup}{Logical. If TRUE, deletes the temporary data file. Default is FALSE.}
+\item{cleanup}{Logical. If TRUE, deletes the temporary data file.
+Default is FALSE.}
 }
 \description{
 Stop Monitoring (Generic)
