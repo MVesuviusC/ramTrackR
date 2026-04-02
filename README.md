@@ -8,7 +8,7 @@ You can install the development version of `ramTrackR` from GitHub:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("kidcancerlab/ramTrackR")
+devtools::install_github("mvesuviusc/ramTrackR")
 ```
 
 ## Setup & Dependencies
