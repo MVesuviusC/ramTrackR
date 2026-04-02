@@ -82,7 +82,7 @@ monitor_bg_routine <- function(
         if (!ps::ps_is_running(handle)) {
           running <- FALSE
         } else {
-          mem <- ps::ps_memory_info(handle)[['rss']]
+          mem <- ps::ps_memory_info(handle)[["rss"]]
           mem_row <- data.frame(
             timestamp = as.numeric(Sys.time()),
             memory_bytes = mem
@@ -91,7 +91,7 @@ monitor_bg_routine <- function(
             mem_row,
             file = data_path,
             append = TRUE,
-            sep = ',',
+            sep = ",",
             col.names = FALSE,
             row.names = FALSE
           )
@@ -175,7 +175,8 @@ start_monitoring <- function(
   env_px$px <- px
   env_px$data_path <- data_path
 
-  # Add a finalizer to kill the background process if the object is garbage collected
+  # Add a finalizer to kill the background process if the object is garbage
+  # collected
   reg.finalizer(
     env_px,
     function(e) {
@@ -201,7 +202,8 @@ start_monitoring <- function(
 #' Stop Monitoring (Generic)
 #'
 #' @param monitor A RamMonitor object
-#' @param cleanup Logical. If TRUE, deletes the temporary data file. Default is FALSE.
+#' @param cleanup Logical. If TRUE, deletes the temporary data file.
+#'   Default is FALSE.
 #' @export
 setGeneric("stop_monitoring", function(monitor, cleanup = FALSE) {
   standardGeneric("stop_monitoring")
@@ -288,7 +290,7 @@ setMethod("get_max_ram_usage", "RamMonitor", function(monitor) {
 #' indicating the "stage" of execution based on bookmarked timepoints.
 #'
 #' @param monitor A RamMonitor object
-#' @return A tibble with columns `timestamp`, `memory_bytes`, `time`, and `stage`
+#' @return A tibble with columns `timestamp`, `memory_bytes`, `time`, `stage`
 #' @export
 #' @importFrom dplyr arrange mutate left_join select
 #' @importFrom tibble as_tibble

@@ -13,7 +13,7 @@ get_ram_data(monitor)
 \item{monitor}{A RamMonitor object}
 }
 \value{
-A tibble with columns \code{timestamp}, \code{memory_bytes}, \code{time}, and \code{stage}
+A tibble with columns \code{timestamp}, \code{memory_bytes}, \code{time}, \code{stage}
 }
 \description{
 Retrieves the memory usage data as a tibble, including a column
